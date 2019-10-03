@@ -1,5 +1,5 @@
 const express = require('express');
-
+const routes = require('./routes');
 const app = express();
 
 // GET, POST, PUT, DELETE
@@ -17,13 +17,7 @@ const app = express();
 // });
 
 app.use(express.json());
-app.post('/users', (req, res)=>{
-
-    return res.json(req.body);
-
-});
+app.use(routes);
 
 app.listen(3333);
 
-let usuarios = [];
-usuarios.push({id: 1, nome: "Gabriel", email: "gabarros17", idade: 23});

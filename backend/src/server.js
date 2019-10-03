@@ -4,6 +4,11 @@ const routes = require('./routes');
 
 const app = express();
 
+mongoose.connect('mongodb+srv://gabriel:gabriel@cluster0-gedzb.mongodb.net/aircnc?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+
 // GET, POST, PUT, DELETE
 
 // req.query = Acessar querys params (Para filtros)

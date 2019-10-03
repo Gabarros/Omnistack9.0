@@ -1,10 +1,14 @@
 const express = require('express');
+const multer = require('multer');
+const uploadConfig = require('./config/upload');
+
+const SessionController = require('./controlers/SessionController');
+const SpotController = require('./controlers/SpotControler');
+
 
 const routes = express.Router();
 
-routes.post('/users', (req, res)=>{
-    return res.json(req.body);
-});
-
+routes.post('/sessions', SessionController.store);
+routes.post('/spots', SpotController.store);
 
 module.exports = routes;
